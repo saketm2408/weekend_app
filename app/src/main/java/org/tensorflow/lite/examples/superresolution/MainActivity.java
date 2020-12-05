@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     for (ImageView iv : lowLightImageViews) {
-      setLRImageViewListener(iv);
+      setLLImageViewListener(iv);
     }
 
     lowLightEnhancementButton.setOnClickListener(
@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
             if (selectedLRBitmap == null) {
               Toast.makeText(
                       getApplicationContext(),
-                      "Please choose one low resolution image",
+                      "Please choose one low light image",
                       Toast.LENGTH_LONG)
                   .show();
               return;
@@ -128,35 +128,35 @@ public class MainActivity extends AppCompatActivity {
               return;
             }
 
-            int[] lowResRGB = new int[LL_IMAGE_HEIGHT * LL_IMAGE_WIDTH];
+            int[] lowLightRGB = new int[LL_IMAGE_HEIGHT * LL_IMAGE_WIDTH];
             selectedLRBitmap.getPixels(
-                lowResRGB, 0, LL_IMAGE_WIDTH, 0, 0, LL_IMAGE_WIDTH, LL_IMAGE_HEIGHT);
+                lowLightRGB, 0, LL_IMAGE_WIDTH, 0, 0, LL_IMAGE_WIDTH, LL_IMAGE_HEIGHT);
 
             final long startTime = SystemClock.uptimeMillis();
-            int[] superResRGB = doSuperResolution(lowResRGB);
+            int[] enhancedRGB = doLowLightEnhancement(lowLightRGB);
             System.out.println("#####################################################################################");
-            System.out.println(lowResRGB);
+            System.out.println(lowLightRGB);
             final long processingTimeMs = SystemClock.uptimeMillis() - startTime;
-            if (superResRGB == null) {
+            if (enhancedRGB == null) {
               showToast("Super resolution failed!");
               return;
             }
 
             final LinearLayout resultLayout = findViewById(R.id.result_layout);
-            final ImageView superResolutionImageView = findViewById(R.id.enhanced_image);
-            final ImageView nativelyScaledImageView = findViewById(R.id.low_light_image);
-            final TextView superResolutionTextView = findViewById(R.id.enhanced_tv);
-            final TextView nativelyScaledImageTextView =
+            final ImageView enhancedImageView = findViewById(R.id.enhanced_image);
+            final ImageView lowLightImageView = findViewById(R.id.low_light_image);
+            final TextView enhancedTextView = findViewById(R.id.enhanced_tv);
+            final TextView lowLightTextView =
                 findViewById(R.id.low_light_image_tv);
             final TextView logTextView = findViewById(R.id.log_view);
 
             // Force refreshing the ImageView
-            superResolutionImageView.setImageDrawable(null);
+            enhancedImageView.setImageDrawable(null);
             Bitmap srImgBitmap =
                 Bitmap.createBitmap(
-                    superResRGB, OL_IMAGE_WIDTH, OL_IMAGE_HEIGHT, Bitmap.Config.ARGB_8888);
-            superResolutionImageView.setImageBitmap(srImgBitmap);
-            nativelyScaledImageView.setImageBitmap(selectedLRBitmap);
+                    enhancedRGB, OL_IMAGE_WIDTH, OL_IMAGE_HEIGHT, Bitmap.Config.ARGB_8888);
+            enhancedImageView.setImageBitmap(srImgBitmap);
+            lowLightImageView.setImageBitmap(selectedLRBitmap);
             resultLayout.setVisibility(View.VISIBLE);
             logTextView.setText("Inference time: " + processingTimeMs + "ms");
           }
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
     deinit();
   }
 
-  private void setLRImageViewListener(ImageView iv) {
+  private void setLLImageViewListener(ImageView iv) {
     iv.setOnTouchListener(
         new View.OnTouchListener() {
           @Override
@@ -193,8 +193,8 @@ public class MainActivity extends AppCompatActivity {
   }
 
   @WorkerThread
-  public synchronized int[] doSuperResolution(int[] lowResRGB) {
-    return superResolutionFromJNI(lowLightEnhancementNativeHandle, lowResRGB);
+  public synchronized int[] doLowLightEnhancement(int[] lowLightRGB) {
+    return superResolutionFromJNI(lowLightEnhancementNativeHandle, lowLightRGB);
   }
 
   private MappedByteBuffer loadModelFile() throws IOException {
@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
     deinitFromJNI(lowLightEnhancementNativeHandle);
   }
 
-  private native int[] superResolutionFromJNI(long lowLightEnhancementNativeHandle, int[] lowResRGB);
+  private native int[] superResolutionFromJNI(long lowLightEnhancementNativeHandle, int[] lowLightRGB);
 
   private native long initWithByteBufferFromJNI(MappedByteBuffer modelBuffer, boolean useGPU);
 
