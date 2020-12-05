@@ -1,7 +1,7 @@
 # ninja log v5
-1	286	0	CMakeFiles/SuperResolution.dir/SuperResolution_jni.cpp.o	aee57c5eaf7ee5f9
-1	546	0	CMakeFiles/SuperResolution.dir/SuperResolution.cpp.o	d142b63abb835260
-546	583	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libSuperResolution.so	c535031708722fc7
-1	284	0	CMakeFiles/SuperResolution.dir/SuperResolution_jni.cpp.o	aee57c5eaf7ee5f9
-1	571	0	CMakeFiles/SuperResolution.dir/SuperResolution.cpp.o	d142b63abb835260
-571	616	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libSuperResolution.so	c535031708722fc7
+0	337	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	856c4f6a476e5fcd
+0	625	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o	1e56b6d3403fea29
+625	663	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libLowLightEnhancement.so	eb4bd25afe2a8cbb
+1	287	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	856c4f6a476e5fcd
+1	542	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o	1e56b6d3403fea29
+542	580	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libLowLightEnhancement.so	eb4bd25afe2a8cbb

@@ -16,11 +16,11 @@
       "abi": "arm64-v8a",
       "output": "/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/jni/arm64-v8a/libtensorflowlite_gpu_jni.so"
     },
-    "SuperResolution-Release-arm64-v8a": {
-      "artifactName": "SuperResolution",
-      "buildCommand": "/home/ubuntu18/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ubuntu18/proj/weekend_app/app/.cxx/cmake/release/arm64-v8a --target SuperResolution",
+    "LowLightEnhancement-Release-arm64-v8a": {
+      "artifactName": "LowLightEnhancement",
+      "buildCommand": "/home/ubuntu18/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ubuntu18/proj/weekend_app/app/.cxx/cmake/release/arm64-v8a --target LowLightEnhancement",
       "abi": "arm64-v8a",
-      "output": "/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/arm64-v8a/libSuperResolution.so"
+      "output": "/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/arm64-v8a/libLowLightEnhancement.so"
     }
   }
 }

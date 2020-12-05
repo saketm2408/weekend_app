@@ -1,11 +1,3 @@
-task downloadESRGANModelFile() {
-    download {
-        src 'https://storage.googleapis.com/download.tensorflow.org/models/tflite/esrgan/ESRGAN.tflite'
-        dest project.ext.ASSET_DIR + '/ESRGAN.tflite'
-        overwrite false
-    }
-}
-
 task downloadTFLiteJARFile() {
     download {
         src "https://bintray.com/google/tensorflow/download_file?file_path=org%2Ftensorflow%2Ftensorflow-lite%2F2.3.0%2Ftensorflow-lite-2.3.0.aar"

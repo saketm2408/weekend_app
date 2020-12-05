@@ -43,7 +43,7 @@ import java.nio.channels.FileChannel;
 /** A super resolution class to generate super resolution images from low resolution images * */
 public class MainActivity extends AppCompatActivity {
   static {
-    System.loadLibrary("SuperResolution");
+    System.loadLibrary("LowLightEnhancement");
   }
 
   private static final String TAG = "LowLightEnhancement";
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity {
 
   @WorkerThread
   public synchronized int[] doLowLightEnhancement(int[] lowLightRGB) {
-    return superResolutionFromJNI(lowLightEnhancementNativeHandle, lowLightRGB);
+    return LowLightEnhancementFromJNI(lowLightEnhancementNativeHandle, lowLightRGB);
   }
 
   private MappedByteBuffer loadModelFile() throws IOException {
@@ -225,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
     deinitFromJNI(lowLightEnhancementNativeHandle);
   }
 
-  private native int[] superResolutionFromJNI(long lowLightEnhancementNativeHandle, int[] lowLightRGB);
+  private native int[] LowLightEnhancementFromJNI(long lowLightEnhancementNativeHandle, int[] lowLightRGB);
 
   private native long initWithByteBufferFromJNI(MappedByteBuffer modelBuffer, boolean useGPU);
 

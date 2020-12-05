@@ -8,7 +8,7 @@ set(TFLITE_GPU_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/../../../../libraries/tensor
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++14")
 set(CMAKE_CXX_STANDARD 14)
 
-add_library(SuperResolution SHARED SuperResolution_jni.cpp SuperResolution.cpp)
+add_library(LowLightEnhancement SHARED LowLightEnhancement_jni.cpp LowLightEnhancement.cpp)
 
 add_library(lib_tensorflowlite SHARED IMPORTED)
 set_target_properties(lib_tensorflowlite PROPERTIES IMPORTED_LOCATION
@@ -21,15 +21,15 @@ set_target_properties(lib_tensorflowlite_gpu PROPERTIES IMPORTED_LOCATION
 find_library(log-lib log)
 
 include_directories(${TFLITE_INCLUDE})
-target_include_directories(SuperResolution PRIVATE
+target_include_directories(LowLightEnhancement PRIVATE
         ${TFLITE_INCLUDE})
 
 include_directories(${TFLITE_GPU_INCLUDE})
 
-target_include_directories(SuperResolution PRIVATE
+target_include_directories(LowLightEnhancement PRIVATE
         ${TFLITE_GPU_INCLUDE})
 
-target_link_libraries(SuperResolution
+target_link_libraries(LowLightEnhancement
                       android
                       lib_tensorflowlite
                       lib_tensorflowlite_gpu

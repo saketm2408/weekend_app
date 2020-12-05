@@ -49,48 +49,48 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
-# Object build statements for SHARED_LIBRARY target SuperResolution
+# Object build statements for SHARED_LIBRARY target LowLightEnhancement
 
-build CMakeFiles/SuperResolution.dir/SuperResolution_jni.cpp.o: CXX_COMPILER__SuperResolution /home/ubuntu18/proj/weekend_app/app/src/main/cc/SuperResolution_jni.cpp
-  DEFINES = -DSuperResolution_EXPORTS
-  DEP_FILE = CMakeFiles/SuperResolution.dir/SuperResolution_jni.cpp.o.d
+build CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o: CXX_COMPILER__LowLightEnhancement /home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancement_jni.cpp
+  DEFINES = -DLowLightEnhancement_EXPORTS
+  DEP_FILE = CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -std=gnu++14 -Oz -DNDEBUG  -fPIC   -std=gnu++14
   INCLUDES = -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/headers -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/headers
-  IN_ABS = /home/ubuntu18/proj/weekend_app/app/src/main/cc/SuperResolution_jni.cpp
-  OBJECT_DIR = CMakeFiles/SuperResolution.dir
-  OBJECT_FILE_DIR = CMakeFiles/SuperResolution.dir
-build CMakeFiles/SuperResolution.dir/SuperResolution.cpp.o: CXX_COMPILER__SuperResolution /home/ubuntu18/proj/weekend_app/app/src/main/cc/SuperResolution.cpp
-  DEFINES = -DSuperResolution_EXPORTS
-  DEP_FILE = CMakeFiles/SuperResolution.dir/SuperResolution.cpp.o.d
+  IN_ABS = /home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancement_jni.cpp
+  OBJECT_DIR = CMakeFiles/LowLightEnhancement.dir
+  OBJECT_FILE_DIR = CMakeFiles/LowLightEnhancement.dir
+build CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o: CXX_COMPILER__LowLightEnhancement /home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancement.cpp
+  DEFINES = -DLowLightEnhancement_EXPORTS
+  DEP_FILE = CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -std=gnu++14 -Oz -DNDEBUG  -fPIC   -std=gnu++14
   INCLUDES = -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/headers -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/headers
-  IN_ABS = /home/ubuntu18/proj/weekend_app/app/src/main/cc/SuperResolution.cpp
-  OBJECT_DIR = CMakeFiles/SuperResolution.dir
-  OBJECT_FILE_DIR = CMakeFiles/SuperResolution.dir
+  IN_ABS = /home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancement.cpp
+  OBJECT_DIR = CMakeFiles/LowLightEnhancement.dir
+  OBJECT_FILE_DIR = CMakeFiles/LowLightEnhancement.dir
 
 # =============================================================================
-# Link build statements for SHARED_LIBRARY target SuperResolution
+# Link build statements for SHARED_LIBRARY target LowLightEnhancement
 
 
 #############################################
-# Link the shared library /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libSuperResolution.so
+# Link the shared library /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libLowLightEnhancement.so
 
-build /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libSuperResolution.so: CXX_SHARED_LIBRARY_LINKER__SuperResolution CMakeFiles/SuperResolution.dir/SuperResolution_jni.cpp.o CMakeFiles/SuperResolution.dir/SuperResolution.cpp.o | /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/jni/armeabi-v7a/libtensorflowlite_jni.so /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/jni/armeabi-v7a/libtensorflowlite_gpu_jni.so /home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so
+build /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libLowLightEnhancement.so: CXX_SHARED_LIBRARY_LINKER__LowLightEnhancement CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o | /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/jni/armeabi-v7a/libtensorflowlite_jni.so /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/jni/armeabi-v7a/libtensorflowlite_gpu_jni.so /home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -std=gnu++14 -Oz -DNDEBUG
   LINK_FLAGS = -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--fatal-warnings -Wl,--exclude-libs,libunwind.a -Wl,--no-undefined -Qunused-arguments
   LINK_LIBRARIES = -landroid /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/jni/armeabi-v7a/libtensorflowlite_jni.so /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/jni/armeabi-v7a/libtensorflowlite_gpu_jni.so /home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/arm-linux-androideabi/21/liblog.so -latomic -lm
-  OBJECT_DIR = CMakeFiles/SuperResolution.dir
+  OBJECT_DIR = CMakeFiles/LowLightEnhancement.dir
   POST_BUILD = :
   PRE_LINK = :
-  SONAME = libSuperResolution.so
+  SONAME = libLowLightEnhancement.so
   SONAME_FLAG = -Wl,-soname,
-  TARGET_FILE = /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libSuperResolution.so
-  TARGET_PDB = SuperResolution.so.dbg
+  TARGET_FILE = /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libLowLightEnhancement.so
+  TARGET_PDB = LowLightEnhancement.so.dbg
 # =============================================================================
 # Target aliases.
 
-build SuperResolution: phony /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libSuperResolution.so
-build libSuperResolution.so: phony /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libSuperResolution.so
+build LowLightEnhancement: phony /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libLowLightEnhancement.so
+build libLowLightEnhancement.so: phony /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libLowLightEnhancement.so
 # =============================================================================
 # Folder targets.
 
@@ -102,7 +102,7 @@ build libSuperResolution.so: phony /home/ubuntu18/proj/weekend_app/app/build/int
 #############################################
 # The main all target.
 
-build all: phony /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libSuperResolution.so
+build all: phony /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/armeabi-v7a/libLowLightEnhancement.so
 
 #############################################
 # Make the all target the default.

@@ -8,28 +8,28 @@
 	"cppFileExtensions" : [ "cpp" ],
 	"libraries" : 
 	{
-		"SuperResolution-Debug-armeabi-v7a" : 
+		"LowLightEnhancement-Debug-armeabi-v7a" : 
 		{
 			"abi" : "armeabi-v7a",
-			"artifactName" : "SuperResolution",
-			"buildCommand" : "/home/ubuntu18/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ubuntu18/proj/weekend_app/app/.cxx/cmake/debug/armeabi-v7a --target SuperResolution",
+			"artifactName" : "LowLightEnhancement",
+			"buildCommand" : "/home/ubuntu18/Android/Sdk/cmake/3.6.4111459/bin/cmake --build /home/ubuntu18/proj/weekend_app/app/.cxx/cmake/debug/armeabi-v7a --target LowLightEnhancement",
 			"buildType" : "debug",
 			"files" : 
 			[
 				
 				{
-					"flags" : "  --target=armv7-none-linux-androideabi21 --gcc-toolchain=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -DSuperResolution_EXPORTS -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/headers -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/headers  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -std=gnu++14 -O0 -fno-limit-debug-info  -fPIC   -std=gnu++14  -c ",
-					"src" : "/home/ubuntu18/proj/weekend_app/app/src/main/cc/SuperResolution_jni.cpp",
+					"flags" : "  --target=armv7-none-linux-androideabi21 --gcc-toolchain=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -DLowLightEnhancement_EXPORTS -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/headers -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/headers  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -std=gnu++14 -O0 -fno-limit-debug-info  -fPIC   -std=gnu++14  -c ",
+					"src" : "/home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancement_jni.cpp",
 					"workingDirectory" : "/home/ubuntu18/proj/weekend_app/app/.cxx/cmake/debug/armeabi-v7a"
 				},
 				
 				{
-					"flags" : "  --target=armv7-none-linux-androideabi21 --gcc-toolchain=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -DSuperResolution_EXPORTS -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/headers -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/headers  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -std=gnu++14 -O0 -fno-limit-debug-info  -fPIC   -std=gnu++14  -c ",
-					"src" : "/home/ubuntu18/proj/weekend_app/app/src/main/cc/SuperResolution.cpp",
+					"flags" : "  --target=armv7-none-linux-androideabi21 --gcc-toolchain=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -DLowLightEnhancement_EXPORTS -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/headers -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/headers  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -march=armv7-a -mthumb -Wformat -Werror=format-security   -std=gnu++14 -O0 -fno-limit-debug-info  -fPIC   -std=gnu++14  -c ",
+					"src" : "/home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancement.cpp",
 					"workingDirectory" : "/home/ubuntu18/proj/weekend_app/app/.cxx/cmake/debug/armeabi-v7a"
 				}
 			],
-			"output" : "/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libSuperResolution.so",
+			"output" : "/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libLowLightEnhancement.so",
 			"toolchain" : "1861423977775209900"
 		},
 		"lib_tensorflowlite-Debug-armeabi-v7a" : 
