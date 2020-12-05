@@ -1,4 +1,4 @@
-#Sat Dec 05 22:54:17 IST 2020
+#Sat Dec 05 23:09:23 IST 2020
 base.0=/home/ubuntu18/proj/weekend_app/app/build/intermediates/dex/debug/mergeExtDexDebug/out/classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

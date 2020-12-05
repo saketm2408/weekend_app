@@ -48,21 +48,18 @@
                         android:id="@+id/low_light_image_1"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginRight="5dp"
-                        android:contentDescription="@string/low_resolution_1" />
+                        android:layout_marginRight="5dp" />
 
                     <ImageView
                         android:id="@+id/low_light_image_2"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_marginRight="5dp"
-                        android:contentDescription="@string/low_resolution_2" />
+                        android:layout_marginRight="5dp" />
 
                     <ImageView
                         android:id="@+id/low_light_image_3"
                         android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:contentDescription="@string/low_resolution_3" />
+                        android:layout_height="50dp" />
                 </LinearLayout>
 
                 <TextView

@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
     selectedImageTextView = findViewById(R.id.chosen_image_tv);
     gpuSwitch = findViewById(R.id.switch_use_gpu);
 
-    ImageView[] lowResImageViews = {lowLightImageView1, lowLightImageView2, lowLightImageView3};
+    ImageView[] lowLightImageViews = {lowLightImageView1, lowLightImageView2, lowLightImageView3};
 
     AssetManager assetManager = getAssets();
     try {
@@ -95,10 +95,10 @@ public class MainActivity extends AppCompatActivity {
       Bitmap bitmap3 = BitmapFactory.decodeStream(inputStream3);
       lowLightImageView3.setImageBitmap(bitmap3);
     } catch (IOException e) {
-      Log.e(TAG, "Failed to open an low resolution image");
+      Log.e(TAG, "Failed to open an low light image");
     }
 
-    for (ImageView iv : lowResImageViews) {
+    for (ImageView iv : lowLightImageViews) {
       setLRImageViewListener(iv);
     }
 
@@ -177,21 +177,15 @@ public class MainActivity extends AppCompatActivity {
             if (v.equals(lowLightImageView1)) {
               selectedLRBitmap = ((BitmapDrawable) lowLightImageView1.getDrawable()).getBitmap();
               selectedImageTextView.setText(
-                  "You are using low resolution image: 1 ("
-                      + getResources().getString(R.string.low_resolution_1)
-                      + ")");
+                  "You are using low resolution image: 1 ");
             } else if (v.equals(lowLightImageView2)) {
               selectedLRBitmap = ((BitmapDrawable) lowLightImageView2.getDrawable()).getBitmap();
               selectedImageTextView.setText(
-                  "You are using low resolution image: 2 ("
-                      + getResources().getString(R.string.low_resolution_2)
-                      + ")");
+                  "You are using low resolution image: 2 ");
             } else if (v.equals(lowLightImageView3)) {
               selectedLRBitmap = ((BitmapDrawable) lowLightImageView3.getDrawable()).getBitmap();
               selectedImageTextView.setText(
-                  "You are using low resolution image: 3 ("
-                      + getResources().getString(R.string.low_resolution_3)
-                      + ")");
+                  "You are using low resolution image: 3 ");
             }
             return false;
           }

@@ -1109,6 +1109,9 @@ id dialog_button
 id disableHome
 id edit_query
 id end
+id enhanced_image
+id enhanced_tv
+id enhancement_button
 id enterAlways
 id enterAlwaysCollapsed
 id exitUntilCollapsed
@@ -1139,9 +1142,11 @@ id line3
 id listMode
 id list_item
 id log_view
-id low_resolution_image_1
-id low_resolution_image_2
-id low_resolution_image_3
+id low_light_image
+id low_light_image_1
+id low_light_image_2
+id low_light_image_3
+id low_light_image_tv
 id masked
 id message
 id middle
@@ -1149,8 +1154,6 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
-id natively_scaled_image
-id natively_scaled_image_tv
 id navigation_header_container
 id never
 id none
@@ -1211,8 +1214,6 @@ id start
 id stretch
 id submenuarrow
 id submit_area
-id super_resolution_image
-id super_resolution_tv
 id switch_use_gpu
 id tabMode
 id tag_accessibility_actions
@@ -1249,7 +1250,6 @@ id unchecked
 id uniform
 id unlabeled
 id up
-id upsample_button
 id useLogo
 id view_offset_helper
 id visible
@@ -1379,9 +1379,6 @@ string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string gpu
 string hide_bottom_view_on_scroll_behavior
-string low_resolution_1
-string low_resolution_2
-string low_resolution_3
 string mtrl_chip_close_icon_content_description
 string natively_scaled_image
 string password_toggle_content_description
