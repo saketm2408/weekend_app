@@ -88,6 +88,7 @@ std::unique_ptr<int[]> SuperResolution::DoSuperResolution(int* lr_img_rgb) {
   // Allocate tensors and populate the input tensor data
   TfLiteStatus status = TfLiteInterpreterAllocateTensors(interpreter_);
   if (status != kTfLiteOk) {
+    __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside DoSuperResolution 1");
     LOGE("Something went wrong when allocating tensors");
     return nullptr;
   }
@@ -99,9 +100,9 @@ std::unique_ptr<int[]> SuperResolution::DoSuperResolution(int* lr_img_rgb) {
   float input_buffer[kNumberOfInputPixels * kImageChannels];
   for (int i = 0, j = 0; i < kNumberOfInputPixels; i++) {
     // Alpha is ignored
-    input_buffer[j++] = static_cast<float>((lr_img_rgb[i] >> 16) & 0xff);
-    input_buffer[j++] = static_cast<float>((lr_img_rgb[i] >> 8) & 0xff);
-    input_buffer[j++] = static_cast<float>((lr_img_rgb[i]) & 0xff);
+    input_buffer[j++] = static_cast<float>((lr_img_rgb[i] >> 16) & 0xff) / 255.0;
+    input_buffer[j++] = static_cast<float>((lr_img_rgb[i] >> 8) & 0xff) / 255.0;
+    input_buffer[j++] = static_cast<float>((lr_img_rgb[i]) & 0xff) / 255.0;
   }
 
   // Feed input into model
@@ -109,6 +110,7 @@ std::unique_ptr<int[]> SuperResolution::DoSuperResolution(int* lr_img_rgb) {
       input_tensor, input_buffer,
       kNumberOfInputPixels * kImageChannels * sizeof(float));
   if (status != kTfLiteOk) {
+    __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside DoSuperResolution 2");
     LOGE("Something went wrong when copying input buffer to input tensor");
     return nullptr;
   }
@@ -116,6 +118,7 @@ std::unique_ptr<int[]> SuperResolution::DoSuperResolution(int* lr_img_rgb) {
   // Run the interpreter
   status = TfLiteInterpreterInvoke(interpreter_);
   if (status != kTfLiteOk) {
+    __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside DoSuperResolution 3");
     LOGE("Something went wrong when running the TFLite model");
     return nullptr;
   }
@@ -128,6 +131,7 @@ std::unique_ptr<int[]> SuperResolution::DoSuperResolution(int* lr_img_rgb) {
       output_tensor, output_buffer,
       kNumberOfOutputPixels * kImageChannels * sizeof(float));
   if (status != kTfLiteOk) {
+    __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside DoSuperResolution 4");
     LOGE("Something went wrong when copying output tensor to output buffer");
     return nullptr;
   }
@@ -138,7 +142,7 @@ std::unique_ptr<int[]> SuperResolution::DoSuperResolution(int* lr_img_rgb) {
   for (int i = 0; i < kNumberOfOutputPixels; i++) {
     for (int j = 0; j < kImageChannels; j++) {
       clipped_output[j] = std::max<float>(
-          0, std::min<float>(255, output_buffer[i * kImageChannels + j]));
+          0, std::min<float>(255, output_buffer[i * kImageChannels + j] * 255));
     }
     // When we have RGB values, we pack them into a single pixel.
     // Alpha is set to 255.

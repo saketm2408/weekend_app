@@ -1,0 +1,15 @@
+Executable : /home/ubuntu18/Android/Sdk/cmake/3.6.4111459/bin/cmake
+arguments : 
+-H/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/cc
+-B/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/.cxx/cmake/release/armeabi-v7a
+-DANDROID_ABI=armeabi-v7a
+-DANDROID_PLATFORM=android-21
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/build/intermediates/cmake/release/obj/armeabi-v7a
+-DCMAKE_BUILD_TYPE=Release
+-DANDROID_NDK=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147
+-DCMAKE_TOOLCHAIN_FILE=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/home/ubuntu18/Android/Sdk/cmake/3.6.4111459/bin/ninja
+-GAndroid Gradle - Ninja
+-DANDROID_STL=c++_shared
+jvmArgs : 
+

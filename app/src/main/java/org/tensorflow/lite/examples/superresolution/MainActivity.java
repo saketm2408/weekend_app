@@ -47,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private static final String TAG = "SuperResolution";
-  private static final String MODEL_NAME = "ESRGAN.tflite";
-  private static final int LR_IMAGE_HEIGHT = 50;
-  private static final int LR_IMAGE_WIDTH = 50;
-  private static final int UPSCALE_FACTOR = 4;
+  private static final String MODEL_NAME = "zdce.tflite";
+  private static final int LR_IMAGE_HEIGHT = 400;
+  private static final int LR_IMAGE_WIDTH = 600;
+  private static final int UPSCALE_FACTOR = 1;
   private static final int SR_IMAGE_HEIGHT = LR_IMAGE_HEIGHT * UPSCALE_FACTOR;
   private static final int SR_IMAGE_WIDTH = LR_IMAGE_WIDTH * UPSCALE_FACTOR;
   private static final String LR_IMG_1 = "lr-1.jpg";
@@ -135,6 +135,8 @@ public class MainActivity extends AppCompatActivity {
 
             final long startTime = SystemClock.uptimeMillis();
             int[] superResRGB = doSuperResolution(lowResRGB);
+            System.out.println("#####################################################################################");
+            System.out.println(lowResRGB);
             final long processingTimeMs = SystemClock.uptimeMillis() - startTime;
             if (superResRGB == null) {
               showToast("Super resolution failed!");

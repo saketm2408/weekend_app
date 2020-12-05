@@ -1,0 +1,53 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="org.tensorflow.lite.examples.superresolution"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+7-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:4:5-17
+8        android:minSdkVersion="21"
+8-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:4:5-17
+9        android:targetSdkVersion="28" />
+9-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:4:5-17
+10
+11    <application
+11-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:6:5-22:19
+12        android:allowBackup="true"
+12-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:7:9-35
+13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+13-->[androidx.core:core:1.1.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/75386ce8a044ee6feb4a39ff00a2e1c0/core-1.1.0/AndroidManifest.xml:24:18-86
+14        android:debuggable="true"
+15        android:icon="@mipmap/ic_launcher"
+15-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:8:9-43
+16        android:label="@string/app_name"
+16-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:9:9-41
+17        android:roundIcon="@mipmap/ic_launcher_round"
+17-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:10:9-54
+18        android:supportsRtl="true"
+18-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:11:9-35
+19        android:testOnly="true"
+20        android:theme="@style/AppTheme.SuperResolution" >
+20-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:12:9-56
+21        <activity
+21-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:13:9-21:20
+22            android:name="org.tensorflow.lite.examples.superresolution.MainActivity"
+22-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:14:13-41
+23            android:label="@string/app_name"
+23-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:15:13-45
+24            android:screenOrientation="portrait" >
+24-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:16:13-49
+25            <intent-filter>
+25-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:17:13-20:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:18:17-69
+26-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:18:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:19:17-77
+28-->/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:19:27-74
+29            </intent-filter>
+30        </activity>
+31    </application>
+32
+33</manifest>

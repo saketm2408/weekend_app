@@ -30,8 +30,11 @@ namespace superresolution {
 extern "C" JNIEXPORT jintArray JNICALL
 Java_org_tensorflow_lite_examples_superresolution_MainActivity_superResolutionFromJNI(
     JNIEnv *env, jobject thiz, jlong native_handle, jintArray low_res_rgb) {
+
+  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 1");
   jint *lr_img_rgb = env->GetIntArrayElements(low_res_rgb, NULL);
 
+  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 2");
   if (!reinterpret_cast<SuperResolution *>(native_handle)
            ->IsInterpreterCreated()) {
     return nullptr;
@@ -40,6 +43,7 @@ Java_org_tensorflow_lite_examples_superresolution_MainActivity_superResolutionFr
   // Generate super resolution image
   auto sr_rgb_colors = reinterpret_cast<SuperResolution *>(native_handle)
                            ->DoSuperResolution(static_cast<int *>(lr_img_rgb));
+  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 3");
   if (!sr_rgb_colors) {
     return nullptr;  // super resolution failed
   }
@@ -47,8 +51,13 @@ Java_org_tensorflow_lite_examples_superresolution_MainActivity_superResolutionFr
   env->SetIntArrayRegion(sr_img_rgb, 0, kNumberOfOutputPixels,
                          sr_rgb_colors.get());
 
+    __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 4");
+
   // Clean up before we return
   env->ReleaseIntArrayElements(low_res_rgb, lr_img_rgb, JNI_COMMIT);
+
+  for (int i=0; i < 400*600; i++)
+      __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 5 %d", sr_img_rgb[i]);
 
   return sr_img_rgb;
 }
