@@ -46,25 +46,24 @@ public class MainActivity extends AppCompatActivity {
     System.loadLibrary("SuperResolution");
   }
 
-  private static final String TAG = "SuperResolution";
+  private static final String TAG = "LowLightEnhancement";
   private static final String MODEL_NAME = "zdce.tflite";
-  private static final int LR_IMAGE_HEIGHT = 400;
-  private static final int LR_IMAGE_WIDTH = 600;
-  private static final int UPSCALE_FACTOR = 1;
-  private static final int SR_IMAGE_HEIGHT = LR_IMAGE_HEIGHT * UPSCALE_FACTOR;
-  private static final int SR_IMAGE_WIDTH = LR_IMAGE_WIDTH * UPSCALE_FACTOR;
-  private static final String LR_IMG_1 = "ll-1.jpg";
-  private static final String LR_IMG_2 = "ll-2.jpg";
-  private static final String LR_IMG_3 = "ll-3.jpg";
+  private static final int LL_IMAGE_HEIGHT = 400;
+  private static final int LL_IMAGE_WIDTH = 600;
+  private static final int OL_IMAGE_HEIGHT = LL_IMAGE_HEIGHT;
+  private static final int OL_IMAGE_WIDTH = LL_IMAGE_WIDTH;
+  private static final String LL_IMG_1 = "ll-1.jpg";
+  private static final String LL_IMG_2 = "ll-2.jpg";
+  private static final String LL_IMG_3 = "ll-3.jpg";
 
   private MappedByteBuffer model;
-  private long superResolutionNativeHandle = 0;
+  private long lowLightEnhancementNativeHandle = 0;
   private Bitmap selectedLRBitmap = null;
   private boolean useGPU = false;
 
-  private ImageView lowResImageView1;
-  private ImageView lowResImageView2;
-  private ImageView lowResImageView3;
+  private ImageView lowLightImageView1;
+  private ImageView lowLightImageView2;
+  private ImageView lowLightImageView3;
   private TextView selectedImageTextView;
   private Switch gpuSwitch;
 
@@ -73,28 +72,28 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    final Button superResolutionButton = findViewById(R.id.upsample_button);
-    lowResImageView1 = findViewById(R.id.low_resolution_image_1);
-    lowResImageView2 = findViewById(R.id.low_resolution_image_2);
-    lowResImageView3 = findViewById(R.id.low_resolution_image_3);
+    final Button lowLightEnhancementButton = findViewById(R.id.enhancement_button);
+    lowLightImageView1 = findViewById(R.id.low_light_image_1);
+    lowLightImageView2 = findViewById(R.id.low_light_image_2);
+    lowLightImageView3 = findViewById(R.id.low_light_image_3);
     selectedImageTextView = findViewById(R.id.chosen_image_tv);
     gpuSwitch = findViewById(R.id.switch_use_gpu);
 
-    ImageView[] lowResImageViews = {lowResImageView1, lowResImageView2, lowResImageView3};
+    ImageView[] lowResImageViews = {lowLightImageView1, lowLightImageView2, lowLightImageView3};
 
     AssetManager assetManager = getAssets();
     try {
-      InputStream inputStream1 = assetManager.open(LR_IMG_1);
+      InputStream inputStream1 = assetManager.open(LL_IMG_1);
       Bitmap bitmap1 = BitmapFactory.decodeStream(inputStream1);
-      lowResImageView1.setImageBitmap(bitmap1);
+      lowLightImageView1.setImageBitmap(bitmap1);
 
-      InputStream inputStream2 = assetManager.open(LR_IMG_2);
+      InputStream inputStream2 = assetManager.open(LL_IMG_2);
       Bitmap bitmap2 = BitmapFactory.decodeStream(inputStream2);
-      lowResImageView2.setImageBitmap(bitmap2);
+      lowLightImageView2.setImageBitmap(bitmap2);
 
-      InputStream inputStream3 = assetManager.open(LR_IMG_3);
+      InputStream inputStream3 = assetManager.open(LL_IMG_3);
       Bitmap bitmap3 = BitmapFactory.decodeStream(inputStream3);
-      lowResImageView3.setImageBitmap(bitmap3);
+      lowLightImageView3.setImageBitmap(bitmap3);
     } catch (IOException e) {
       Log.e(TAG, "Failed to open an low resolution image");
     }
@@ -103,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
       setLRImageViewListener(iv);
     }
 
-    superResolutionButton.setOnClickListener(
+    lowLightEnhancementButton.setOnClickListener(
         new View.OnClickListener() {
           @Override
           public void onClick(View view) {
@@ -116,22 +115,22 @@ public class MainActivity extends AppCompatActivity {
               return;
             }
 
-            if (superResolutionNativeHandle == 0) {
-                superResolutionNativeHandle = initTFLiteInterpreter(gpuSwitch.isChecked());
+            if (lowLightEnhancementNativeHandle == 0) {
+                lowLightEnhancementNativeHandle = initTFLiteInterpreter(gpuSwitch.isChecked());
             } else if (useGPU != gpuSwitch.isChecked()) {
               // We need to reinitialize interpreter when execution hardware is changed
               deinit();
-              superResolutionNativeHandle = initTFLiteInterpreter(gpuSwitch.isChecked());
+              lowLightEnhancementNativeHandle = initTFLiteInterpreter(gpuSwitch.isChecked());
             }
             useGPU = gpuSwitch.isChecked();
-            if (superResolutionNativeHandle == 0) {
+            if (lowLightEnhancementNativeHandle == 0) {
               showToast("TFLite interpreter failed to create!");
               return;
             }
 
-            int[] lowResRGB = new int[LR_IMAGE_HEIGHT * LR_IMAGE_WIDTH];
+            int[] lowResRGB = new int[LL_IMAGE_HEIGHT * LL_IMAGE_WIDTH];
             selectedLRBitmap.getPixels(
-                lowResRGB, 0, LR_IMAGE_WIDTH, 0, 0, LR_IMAGE_WIDTH, LR_IMAGE_HEIGHT);
+                lowResRGB, 0, LL_IMAGE_WIDTH, 0, 0, LL_IMAGE_WIDTH, LL_IMAGE_HEIGHT);
 
             final long startTime = SystemClock.uptimeMillis();
             int[] superResRGB = doSuperResolution(lowResRGB);
@@ -144,18 +143,18 @@ public class MainActivity extends AppCompatActivity {
             }
 
             final LinearLayout resultLayout = findViewById(R.id.result_layout);
-            final ImageView superResolutionImageView = findViewById(R.id.super_resolution_image);
-            final ImageView nativelyScaledImageView = findViewById(R.id.natively_scaled_image);
-            final TextView superResolutionTextView = findViewById(R.id.super_resolution_tv);
+            final ImageView superResolutionImageView = findViewById(R.id.enhanced_image);
+            final ImageView nativelyScaledImageView = findViewById(R.id.low_light_image);
+            final TextView superResolutionTextView = findViewById(R.id.enhanced_tv);
             final TextView nativelyScaledImageTextView =
-                findViewById(R.id.natively_scaled_image_tv);
+                findViewById(R.id.low_light_image_tv);
             final TextView logTextView = findViewById(R.id.log_view);
 
             // Force refreshing the ImageView
             superResolutionImageView.setImageDrawable(null);
             Bitmap srImgBitmap =
                 Bitmap.createBitmap(
-                    superResRGB, SR_IMAGE_WIDTH, SR_IMAGE_HEIGHT, Bitmap.Config.ARGB_8888);
+                    superResRGB, OL_IMAGE_WIDTH, OL_IMAGE_HEIGHT, Bitmap.Config.ARGB_8888);
             superResolutionImageView.setImageBitmap(srImgBitmap);
             nativelyScaledImageView.setImageBitmap(selectedLRBitmap);
             resultLayout.setVisibility(View.VISIBLE);
@@ -175,20 +174,20 @@ public class MainActivity extends AppCompatActivity {
         new View.OnTouchListener() {
           @Override
           public boolean onTouch(View v, MotionEvent event) {
-            if (v.equals(lowResImageView1)) {
-              selectedLRBitmap = ((BitmapDrawable) lowResImageView1.getDrawable()).getBitmap();
+            if (v.equals(lowLightImageView1)) {
+              selectedLRBitmap = ((BitmapDrawable) lowLightImageView1.getDrawable()).getBitmap();
               selectedImageTextView.setText(
                   "You are using low resolution image: 1 ("
                       + getResources().getString(R.string.low_resolution_1)
                       + ")");
-            } else if (v.equals(lowResImageView2)) {
-              selectedLRBitmap = ((BitmapDrawable) lowResImageView2.getDrawable()).getBitmap();
+            } else if (v.equals(lowLightImageView2)) {
+              selectedLRBitmap = ((BitmapDrawable) lowLightImageView2.getDrawable()).getBitmap();
               selectedImageTextView.setText(
                   "You are using low resolution image: 2 ("
                       + getResources().getString(R.string.low_resolution_2)
                       + ")");
-            } else if (v.equals(lowResImageView3)) {
-              selectedLRBitmap = ((BitmapDrawable) lowResImageView3.getDrawable()).getBitmap();
+            } else if (v.equals(lowLightImageView3)) {
+              selectedLRBitmap = ((BitmapDrawable) lowLightImageView3.getDrawable()).getBitmap();
               selectedImageTextView.setText(
                   "You are using low resolution image: 3 ("
                       + getResources().getString(R.string.low_resolution_3)
@@ -201,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
 
   @WorkerThread
   public synchronized int[] doSuperResolution(int[] lowResRGB) {
-    return superResolutionFromJNI(superResolutionNativeHandle, lowResRGB);
+    return superResolutionFromJNI(lowLightEnhancementNativeHandle, lowResRGB);
   }
 
   private MappedByteBuffer loadModelFile() throws IOException {
@@ -229,12 +228,12 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void deinit() {
-    deinitFromJNI(superResolutionNativeHandle);
+    deinitFromJNI(lowLightEnhancementNativeHandle);
   }
 
-  private native int[] superResolutionFromJNI(long superResolutionNativeHandle, int[] lowResRGB);
+  private native int[] superResolutionFromJNI(long lowLightEnhancementNativeHandle, int[] lowResRGB);
 
   private native long initWithByteBufferFromJNI(MappedByteBuffer modelBuffer, boolean useGPU);
 
-  private native void deinitFromJNI(long superResolutionNativeHandle);
+  private native void deinitFromJNI(long lowLightEnhancementNativeHandle);
 }
