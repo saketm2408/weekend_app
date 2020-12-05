@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
   private static final int UPSCALE_FACTOR = 1;
   private static final int SR_IMAGE_HEIGHT = LR_IMAGE_HEIGHT * UPSCALE_FACTOR;
   private static final int SR_IMAGE_WIDTH = LR_IMAGE_WIDTH * UPSCALE_FACTOR;
-  private static final String LR_IMG_1 = "lr-1.jpg";
-  private static final String LR_IMG_2 = "lr-2.jpg";
-  private static final String LR_IMG_3 = "lr-3.jpg";
+  private static final String LR_IMG_1 = "ll-1.jpg";
+  private static final String LR_IMG_2 = "ll-2.jpg";
+  private static final String LR_IMG_3 = "ll-3.jpg";
 
   private MappedByteBuffer model;
   private long superResolutionNativeHandle = 0;

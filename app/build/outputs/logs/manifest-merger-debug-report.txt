@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:1:1-24:12
-INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:1:1-24:12
-INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:1:1-24:12
-INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:1:1-24:12
+ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:1:1-24:12
+INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:1:1-24:12
+INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:1:1-24:12
+INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:1:1-24:12
 MERGED from [com.google.android.material:material:1.0.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/a4c14c1ec568cb72726cfd1e1b06f346/material-1.0.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.1.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/1479369002629eba27ccfd9607ead6fe/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.1.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/ee0c3f5de5441aff4290fbe6000feaab/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
@@ -37,27 +37,27 @@ MERGED from [androidx.savedstate:savedstate:1.0.0] /home/ubuntu18/.gradle/caches
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/8da686d1db15a9c5431b15aa3c11a801/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/241187968818c27880c934ed49772f22/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/bb52298ad917043f6ab752a646b9b507/core-runtime-2.0.0/AndroidManifest.xml:17:1-22:12
-INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:1:1-24:12
-INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:1:1-24:12
-INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:1:1-24:12
+INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:1:1-24:12
+INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:1:1-24:12
+INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:1:1-24:12
 	package
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:2:5-59
-		INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml
-		INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:2:5-59
+		INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:1:1-24:12
-		INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:1:1-24:12
+		INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:1:1-24:12
-		INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:1:1-24:12
+		INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:1:11-69
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:1:11-69
 uses-sdk
-ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:4:5-17
-INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:4:5-17
-INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:4:5-17
+ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:4:5-17
+INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:4:5-17
+INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:4:5-17
 MERGED from [com.google.android.material:material:1.0.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/a4c14c1ec568cb72726cfd1e1b06f346/material-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.0.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/a4c14c1ec568cb72726cfd1e1b06f346/material-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.1.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/1479369002629eba27ccfd9607ead6fe/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
@@ -124,18 +124,18 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/ubuntu18/.g
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/241187968818c27880c934ed49772f22/lifecycle-livedata-core-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/bb52298ad917043f6ab752a646b9b507/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/bb52298ad917043f6ab752a646b9b507/core-runtime-2.0.0/AndroidManifest.xml:20:5-44
-INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:4:5-17
-INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:4:5-17
+INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:4:5-17
+INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:4:5-17
 	android:targetSdkVersion
-		INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:4:5-17
-		INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:4:5-17
+		INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:4:5-17
-		INJECTED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:4:5-17
+		INJECTED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml
 application
-ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:6:5-22:19
+ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:6:5-22:19
 MERGED from [com.google.android.material:material:1.0.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/a4c14c1ec568cb72726cfd1e1b06f346/material-1.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.0.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/a4c14c1ec568cb72726cfd1e1b06f346/material-1.0.0/AndroidManifest.xml:22:5-20
 MERGED from [androidx.core:core:1.1.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/75386ce8a044ee6feb4a39ff00a2e1c0/core-1.1.0/AndroidManifest.xml:24:5-89
@@ -145,32 +145,32 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/ubunt
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] /home/ubuntu18/.gradle/caches/transforms-2/files-2.1/75386ce8a044ee6feb4a39ff00a2e1c0/core-1.1.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:11:9-35
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:11:9-35
 	android:label
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:9:9-41
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:9:9-41
 	android:roundIcon
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:10:9-54
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:10:9-54
 	android:icon
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:8:9-43
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:8:9-43
 	android:allowBackup
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:7:9-35
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:7:9-35
 	android:theme
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:12:9-56
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:12:9-56
 activity#org.tensorflow.lite.examples.superresolution.MainActivity
-ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:13:9-21:20
+ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:13:9-21:20
 	android:screenOrientation
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:16:13-49
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:16:13-49
 	android:label
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:15:13-45
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:15:13-45
 	android:name
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:14:13-41
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:14:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:17:13-20:29
+ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:17:13-20:29
 action#android.intent.action.MAIN
-ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:18:17-69
+ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:18:25-66
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:19:17-77
+ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:19:17-77
 	android:name
-		ADDED from /home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/src/main/AndroidManifest.xml:19:27-74
+		ADDED from /home/ubuntu18/proj/weekend_app/app/src/main/AndroidManifest.xml:19:27-74

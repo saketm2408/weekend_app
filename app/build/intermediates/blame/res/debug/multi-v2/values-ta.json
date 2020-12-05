@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ta/values-ta.xml",
+            "outputFile": "/home/ubuntu18/proj/weekend_app/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ta/values-ta.xml",
             "map": [
                 {
                     "source": "/home/ubuntu18/.gradle/caches/transforms-2/files-2.1/1479369002629eba27ccfd9607ead6fe/appcompat-1.1.0/res/values-ta/values-ta.xml",

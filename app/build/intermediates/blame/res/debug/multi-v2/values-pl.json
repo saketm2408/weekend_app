@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml",
+            "outputFile": "/home/ubuntu18/proj/weekend_app/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-pl/values-pl.xml",
             "map": [
                 {
                     "source": "/home/ubuntu18/.gradle/caches/transforms-2/files-2.1/75386ce8a044ee6feb4a39ff00a2e1c0/core-1.1.0/res/values-pl/values-pl.xml",

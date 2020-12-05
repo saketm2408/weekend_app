@@ -1,7 +1,7 @@
 Executable : /home/ubuntu18/Android/Sdk/cmake/3.6.4111459/bin/cmake
 arguments : 
 --build
-/home/ubuntu18/proj/examples/lite/examples/super_resolution/android/app/.cxx/cmake/debug/arm64-v8a
+/home/ubuntu18/proj/weekend_app/app/.cxx/cmake/debug/arm64-v8a
 --target
 SuperResolution
 jvmArgs : 
