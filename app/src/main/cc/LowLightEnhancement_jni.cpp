@@ -27,8 +27,7 @@ namespace tflite {
 namespace examples {
 namespace superresolution {
 
-extern "C" JNIEXPORT jintArray JNICALL
-Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_LowLightEnhancementFromJNI(
+extern "C" JNIEXPORT jintArray JNICALL Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_LowLightEnhancementFromJNI(
     JNIEnv *env, jobject thiz, jlong native_handle, jintArray low_light_rgb) {
 
   __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 1");
@@ -60,8 +59,7 @@ Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_LowLight
   return enhanced_img_rgb;
 }
 
-extern "C" JNIEXPORT jlong JNICALL
-Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_initWithByteBufferFromJNI(
+extern "C" JNIEXPORT jlong JNICALL Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_initWithByteBufferFromJNI(
     JNIEnv *env, jobject thiz, jobject model_buffer, jboolean use_gpu) {
   
   const void *model_data =
@@ -81,8 +79,7 @@ Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_initWith
   }
 }
 
-extern "C" JNIEXPORT void JNICALL
-Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_deinitFromJNI(
+extern "C" JNIEXPORT void JNICALL Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_deinitFromJNI(
     JNIEnv *env, jobject thiz, jlong native_handle) {
   delete reinterpret_cast<LowLightEnhancementAndFaceId*>(native_handle);
 }

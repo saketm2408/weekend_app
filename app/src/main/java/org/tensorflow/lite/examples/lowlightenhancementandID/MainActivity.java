@@ -145,7 +145,6 @@ public class MainActivity extends AppCompatActivity {
             final long startTime = SystemClock.uptimeMillis();
             int[] enhancedRGB = doLowLightEnhancement(lowLightRGB);
             System.out.println("#####################################################################################");
-            System.out.println(lowLightRGB);
             final long processingTimeMs = SystemClock.uptimeMillis() - startTime;
             if (enhancedRGB == null) {
               showToast("Super resolution failed!");
@@ -217,6 +216,11 @@ public class MainActivity extends AppCompatActivity {
       return fileChannel.map(FileChannel.MapMode.READ_ONLY, startOffset, declaredLength);
     }
   }
+
+  // @WorkerThread
+  // public synchronized int[] computeFace_Emb(int[] enhancedRGB) {
+
+  // }
 
   private void showToast(String str) {
     Toast.makeText(getApplicationContext(), str, Toast.LENGTH_LONG).show();

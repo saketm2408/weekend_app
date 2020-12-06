@@ -58,6 +58,8 @@ class LowLightEnhancementAndFaceId {
   TfLiteModel* model_ = nullptr;
   TfLiteInterpreterOptions* options_ = nullptr;
   TfLiteDelegate* delegate_ = nullptr;
+
+  float* ComputeFaceEMb(int *img_rgb);
 };
 
 }  // namespace superresolution

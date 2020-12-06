@@ -2,3 +2,6 @@
 0	456	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	856c4f6a476e5fcd
 1	818	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o	f56f126eeabab918
 818	872	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libLowLightEnhancement.so	a7e25133b1c65f53
+0	314	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	856c4f6a476e5fcd
+0	551	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o	f56f126eeabab918
+551	585	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libLowLightEnhancement.so	a7e25133b1c65f53

@@ -154,6 +154,61 @@ std::unique_ptr<int[]> LowLightEnhancementAndFaceId::DoLowLightEnhancement(int* 
   return rgb_colors;
 }
 
+float* LowLightEnhancementAndFaceId::ComputeFaceEMb(int* enhanced_img_rgb) {
+    // Allocate tensors and populate the input tensor data
+    TfLiteStatus status = TfLiteInterpreterAllocateTensors(interpreter_);
+    if (status != kTfLiteOk) {
+        __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside ComputeFaceEMb 1");
+        LOGE("Something went wrong when allocating tensors");
+        return nullptr;
+    }
+
+    TfLiteTensor* input_tensor = TfLiteInterpreterGetInputTensor(interpreter_, 0);
+
+    // Extract RGB values from each pixel
+    float input_buffer[112*112 * kImageChannels];
+    for (int i = 0, j = 0; i < 112*112; i++) {
+        // Alpha is ignored
+        input_buffer[j++] = static_cast<float>((enhanced_img_rgb[i] >> 16) & 0xff) / 255.0;
+        input_buffer[j++] = static_cast<float>((enhanced_img_rgb[i] >> 8) & 0xff) / 255.0;
+        input_buffer[j++] = static_cast<float>((enhanced_img_rgb[i]) & 0xff) / 255.0;
+    }
+
+    // Feed input into model
+    status = TfLiteTensorCopyFromBuffer(
+            input_tensor, input_buffer,
+            kNumberOfInputPixels * kImageChannels * sizeof(float));
+    if (status != kTfLiteOk) {
+        __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside ComputeFaceEMb 2");
+        LOGE("Something went wrong when copying input buffer to input tensor");
+        return nullptr;
+    }
+
+    // Run the interpreter
+    status = TfLiteInterpreterInvoke(interpreter_);
+    if (status != kTfLiteOk) {
+        __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside ComputeFaceEMb 3");
+        LOGE("Something went wrong when running the TFLite model");
+        return nullptr;
+    }
+
+    // Extract the output tensor data
+    const TfLiteTensor* output_tensor =
+            TfLiteInterpreterGetOutputTensor(interpreter_, 0);
+    float output_buffer[192];
+    status = TfLiteTensorCopyToBuffer(
+            output_tensor, output_buffer,
+            192 * sizeof(float));
+    if (status != kTfLiteOk) {
+        __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside ComputeFaceEMb 4");
+        LOGE("Something went wrong when copying output tensor to output buffer");
+        return nullptr;
+    }
+
+    return output_buffer;
+}
+
+
 }  // namespace superresolution
 }  // namespace examples
 }  // namespace tflite
