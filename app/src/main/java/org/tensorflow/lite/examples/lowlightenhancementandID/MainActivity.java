@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private static final String TAG = "LowLightEnhancement";
-  private static final String MODEL_NAME = "zdce.tflite";
+  private static final String LOW_LIGHT_EN_MODEL_NAME = "zdce.tflite";
+  private static final String FACE_ID_MODEL_NAME = "mobile_face_net.tflite";
   private static final int LL_IMAGE_HEIGHT = 400;
   private static final int LL_IMAGE_WIDTH = 600;
   private static final int OL_IMAGE_HEIGHT = LL_IMAGE_HEIGHT;
@@ -56,8 +57,10 @@ public class MainActivity extends AppCompatActivity {
   private static final String LL_IMG_2 = "ll-2.jpg";
   private static final String LL_IMG_3 = "ll-3.jpg";
 
-  private MappedByteBuffer model;
+  private MappedByteBuffer lowLightEnModel;
+  private MappedByteBuffer faceIDModel;
   private long lowLightEnhancementNativeHandle = 0;
+  private long faceIDNativeHandle = 0;
   private Bitmap selectedLRBitmap = null;
   private boolean useGPU = false;
 
@@ -116,14 +119,21 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (lowLightEnhancementNativeHandle == 0) {
-                lowLightEnhancementNativeHandle = initTFLiteInterpreter(gpuSwitch.isChecked());
+                lowLightEnhancementNativeHandle = initTFLiteInterpreter(gpuSwitch.isChecked(), LOW_LIGHT_EN_MODEL_NAME);
             } else if (useGPU != gpuSwitch.isChecked()) {
               // We need to reinitialize interpreter when execution hardware is changed
               deinit();
-              lowLightEnhancementNativeHandle = initTFLiteInterpreter(gpuSwitch.isChecked());
+              lowLightEnhancementNativeHandle = initTFLiteInterpreter(gpuSwitch.isChecked(), LOW_LIGHT_EN_MODEL_NAME);
+            }
+            if (faceIDNativeHandle == 0) {
+              faceIDNativeHandle = initTFLiteInterpreter(gpuSwitch.isChecked(), FACE_ID_MODEL_NAME);
+            } else if (useGPU != gpuSwitch.isChecked()) {
+              // We need to reinitialize interpreter when execution hardware is changed
+              deinit();
+              faceIDNativeHandle = initTFLiteInterpreter(gpuSwitch.isChecked(), FACE_ID_MODEL_NAME);
             }
             useGPU = gpuSwitch.isChecked();
-            if (lowLightEnhancementNativeHandle == 0) {
+            if (lowLightEnhancementNativeHandle == 0 || faceIDNativeHandle == 0) {
               showToast("TFLite interpreter failed to create!");
               return;
             }
@@ -197,9 +207,9 @@ public class MainActivity extends AppCompatActivity {
     return LowLightEnhancementFromJNI(lowLightEnhancementNativeHandle, lowLightRGB);
   }
 
-  private MappedByteBuffer loadModelFile() throws IOException {
+  private MappedByteBuffer loadModelFile(String modelName) throws IOException {
     try (AssetFileDescriptor fileDescriptor =
-            AssetsUtil.getAssetFileDescriptorOrCached(getApplicationContext(), MODEL_NAME);
+            AssetsUtil.getAssetFileDescriptorOrCached(getApplicationContext(), modelName);
         FileInputStream inputStream = new FileInputStream(fileDescriptor.getFileDescriptor())) {
       FileChannel fileChannel = inputStream.getChannel();
       long startOffset = fileDescriptor.getStartOffset();
@@ -212,13 +222,16 @@ public class MainActivity extends AppCompatActivity {
     Toast.makeText(getApplicationContext(), str, Toast.LENGTH_LONG).show();
   }
 
-  private long initTFLiteInterpreter(boolean useGPU) {
+  private long initTFLiteInterpreter(boolean useGPU, String modelName) {
     try {
-      model = loadModelFile();
+      if (modelName.equals(LOW_LIGHT_EN_MODEL_NAME))
+        lowLightEnModel = loadModelFile(modelName);
+      else
+        faceIDModel = loadModelFile(modelName);
     } catch (IOException e) {
       Log.e(TAG, "Fail to load model", e);
     }
-    return initWithByteBufferFromJNI(model, useGPU);
+    return initWithByteBufferFromJNI(lowLightEnModel, useGPU);
   }
 
   private void deinit() {
