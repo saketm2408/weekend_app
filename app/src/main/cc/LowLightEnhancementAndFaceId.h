@@ -52,7 +52,8 @@ class LowLightEnhancementAndFaceId {
   // image
   std::unique_ptr<int[]> DoLowLightEnhancement(int* lr_img_rgb);
 
-    float* ComputeFaceEMb(int *img_rgb);
+  float* ComputeFaceEMb(int *img_rgb);
+
 
 private:
   // TODO: use unique_ptr

@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
               deinit();
               faceIDNativeHandle = initTFLiteInterpreter(gpuSwitch.isChecked(), FACE_ID_MODEL_NAME);
             }
+            System.out.println("**************************************" + faceIDNativeHandle + "***************************");
             useGPU = gpuSwitch.isChecked();
             if (lowLightEnhancementNativeHandle == 0 || faceIDNativeHandle == 0) {
               showToast("TFLite interpreter failed to create!");
@@ -161,13 +162,19 @@ public class MainActivity extends AppCompatActivity {
 
             // Force refreshing the ImageView
             enhancedImageView.setImageDrawable(null);
-            Bitmap srImgBitmap =
+
+            Bitmap enImgBitmap =
                 Bitmap.createBitmap(
                     enhancedRGB, OL_IMAGE_WIDTH, OL_IMAGE_HEIGHT, Bitmap.Config.ARGB_8888);
-            enhancedImageView.setImageBitmap(srImgBitmap);
+            Bitmap resizedB =Bitmap.createScaledBitmap(enImgBitmap, 112, 112, false);
+            int[] resizedEnRGB = new int[112*112];
+            resizedB.getPixels(resizedEnRGB, 0, 112, 0, 0, 112, 112);
+            // computeFaceEmbFromJNI(faceIDNativeHandle, resizedEnRGB);
+
+            enhancedImageView.setImageBitmap(enImgBitmap);
             lowLightImageView.setImageBitmap(selectedLRBitmap);
             resultLayout.setVisibility(View.VISIBLE);
-            logTextView.setText("Inference time: " + processingTimeMs + "ms");
+            System.out.println("Inference time::::::::::::::::: " + processingTimeMs + "ms");
           }
         });
   }
@@ -227,15 +234,20 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private long initTFLiteInterpreter(boolean useGPU, String modelName) {
+    MappedByteBuffer model = null;
     try {
-      if (modelName.equals(LOW_LIGHT_EN_MODEL_NAME))
+      if (modelName.equals(LOW_LIGHT_EN_MODEL_NAME)) {
         lowLightEnModel = loadModelFile(modelName);
-      else
+        model = lowLightEnModel;
+      }
+      else {
         faceIDModel = loadModelFile(modelName);
+        model = faceIDModel;
+      }
     } catch (IOException e) {
       Log.e(TAG, "Fail to load model", e);
     }
-    return initWithByteBufferFromJNI(lowLightEnModel, useGPU);
+    return initWithByteBufferFromJNI(model, useGPU);
   }
 
   private void deinit() {
@@ -247,4 +259,6 @@ public class MainActivity extends AppCompatActivity {
   private native long initWithByteBufferFromJNI(MappedByteBuffer modelBuffer, boolean useGPU);
 
   private native void deinitFromJNI(long lowLightEnhancementNativeHandle);
+
+  private native float[] computeFaceEmbFromJNI(long faceIDNativeHandle, int[] entRGB);
 }

@@ -1,6 +1,6 @@
 [1/3] Building CXX object CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o
 [2/3] Building CXX object CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o
-/home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancementAndFaceId.cpp:208:12: warning: address of stack memory associated with local variable 'output_buffer' returned [-Wreturn-stack-address]
+/home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancementAndFaceId.cpp:213:12: warning: address of stack memory associated with local variable 'output_buffer' returned [-Wreturn-stack-address]
     return output_buffer;
            ^~~~~~~~~~~~~
 1 warning generated.

@@ -72,7 +72,7 @@ extern "C" JNIEXPORT jfloatArray JNICALL Java_org_tensorflow_lite_examples_lowli
   }
 
   // Generate low light enhanced image
-  float* emb = reinterpret_cast<LowLightEnhancementAndFaceId *>(native_handle)
+  auto emb = reinterpret_cast<LowLightEnhancementAndFaceId *>(native_handle)
           ->ComputeFaceEMb(static_cast<int *>(enhanced_img_rgb));
   __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside computeFaceEmbFromJNI 3");
   if (!emb) {
@@ -80,7 +80,7 @@ extern "C" JNIEXPORT jfloatArray JNICALL Java_org_tensorflow_lite_examples_lowli
   }
 
   jfloatArray result;
-  // result = env->SetFloatArrayRegion(result, 0, 3, emb);
+  env->SetFloatArrayRegion(result, 0, 192, emb);
   return result;
 }
 

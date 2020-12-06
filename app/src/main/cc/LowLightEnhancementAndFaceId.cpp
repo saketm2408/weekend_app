@@ -205,6 +205,11 @@ float* LowLightEnhancementAndFaceId::ComputeFaceEMb(int* enhanced_img_rgb) {
         return nullptr;
     }
 
+    // auto embed = std::make_unique<float []>(192);
+    // for (int i = 0; i < 192; i++) {
+    //    embed[i] = output_buffer[i];
+    // }
+
     return output_buffer;
 }
 
