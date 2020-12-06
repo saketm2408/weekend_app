@@ -83,3 +83,12 @@
 38	504	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	9e661254a5e35365
 38	681	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o	f8ed6b33f4339c00
 681	1110	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libLowLightEnhancement.so	5af87e1ab987d4e
+29	505	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	9e661254a5e35365
+30	710	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o	95b70d203dfccb89
+710	1506	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libLowLightEnhancement.so	33f387a5c4353e27
+0	270	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	9e661254a5e35365
+0	561	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o	95b70d203dfccb89
+561	578	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libLowLightEnhancement.so	33f387a5c4353e27
+2	307	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	9e661254a5e35365
+2	636	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o	95b70d203dfccb89
+636	652	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libLowLightEnhancement.so	33f387a5c4353e27

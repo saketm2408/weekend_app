@@ -1,10 +1,10 @@
 # ninja log v5
-0	337	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	856c4f6a476e5fcd
-0	625	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o	1e56b6d3403fea29
-625	663	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libLowLightEnhancement.so	eb4bd25afe2a8cbb
-1	287	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	856c4f6a476e5fcd
-1	542	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o	1e56b6d3403fea29
-542	580	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libLowLightEnhancement.so	eb4bd25afe2a8cbb
-29	5240	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	856c4f6a476e5fcd
-29	5625	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o	1e56b6d3403fea29
-5625	6230	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libLowLightEnhancement.so	eb4bd25afe2a8cbb
+0	1725	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	856c4f6a476e5fcd
+0	2311	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o	f56f126eeabab918
+2311	3425	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libLowLightEnhancement.so	a7e25133b1c65f53
+0	280	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	856c4f6a476e5fcd
+1	556	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o	f56f126eeabab918
+556	600	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libLowLightEnhancement.so	a7e25133b1c65f53
+1	379	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o	856c4f6a476e5fcd
+1	667	0	CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o	f56f126eeabab918
+668	770	0	/home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/debug/obj/arm64-v8a/libLowLightEnhancement.so	a7e25133b1c65f53

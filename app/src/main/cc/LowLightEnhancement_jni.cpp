@@ -21,27 +21,27 @@
 #include <cstring>
 #include <string>
 
-#include "LowLightEnhancement.h"
+#include "LowLightEnhancementAndFaceId.h"
 
 namespace tflite {
 namespace examples {
 namespace superresolution {
 
 extern "C" JNIEXPORT jintArray JNICALL
-Java_org_tensorflow_lite_examples_superresolution_MainActivity_LowLightEnhancementFromJNI(
+Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_LowLightEnhancementFromJNI(
     JNIEnv *env, jobject thiz, jlong native_handle, jintArray low_light_rgb) {
 
   __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 1");
   jint *low_light_img_rgb = env->GetIntArrayElements(low_light_rgb, NULL);
 
   __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 2");
-  if (!reinterpret_cast<LowLightEnhancement *>(native_handle)
+  if (!reinterpret_cast<LowLightEnhancementAndFaceId *>(native_handle)
            ->IsInterpreterCreated()) {
     return nullptr;
   }
 
   // Generate low light enhanced image
-  auto sr_rgb_colors = reinterpret_cast<LowLightEnhancement *>(native_handle)
+  auto sr_rgb_colors = reinterpret_cast<LowLightEnhancementAndFaceId *>(native_handle)
           ->DoLowLightEnhancement(static_cast<int *>(low_light_img_rgb));
   __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 3");
   if (!sr_rgb_colors) {
@@ -61,7 +61,7 @@ Java_org_tensorflow_lite_examples_superresolution_MainActivity_LowLightEnhanceme
 }
 
 extern "C" JNIEXPORT jlong JNICALL
-Java_org_tensorflow_lite_examples_superresolution_MainActivity_initWithByteBufferFromJNI(
+Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_initWithByteBufferFromJNI(
     JNIEnv *env, jobject thiz, jobject model_buffer, jboolean use_gpu) {
   
   const void *model_data =
@@ -69,7 +69,7 @@ Java_org_tensorflow_lite_examples_superresolution_MainActivity_initWithByteBuffe
   
   jlong model_size_bytes = env->GetDirectBufferCapacity(model_buffer);
   
-  LowLightEnhancement *low_light_enhancement_obj = new LowLightEnhancement(
+  LowLightEnhancementAndFaceId *low_light_enhancement_obj = new LowLightEnhancementAndFaceId(
       model_data, static_cast<size_t>(model_size_bytes), use_gpu);
   
   if (low_light_enhancement_obj->IsInterpreterCreated()) {
@@ -82,9 +82,9 @@ Java_org_tensorflow_lite_examples_superresolution_MainActivity_initWithByteBuffe
 }
 
 extern "C" JNIEXPORT void JNICALL
-Java_org_tensorflow_lite_examples_superresolution_MainActivity_deinitFromJNI(
+Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_deinitFromJNI(
     JNIEnv *env, jobject thiz, jlong native_handle) {
-  delete reinterpret_cast<LowLightEnhancement*>(native_handle);
+  delete reinterpret_cast<LowLightEnhancementAndFaceId*>(native_handle);
 }
 
 }  // namespace superresolution

@@ -25,7 +25,7 @@
 				
 				{
 					"flags" : "  --target=aarch64-none-linux-android21 --gcc-toolchain=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64 --sysroot=/home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot  -DLowLightEnhancement_EXPORTS -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/headers -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/headers  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -std=gnu++14 -O0 -fno-limit-debug-info  -fPIC   -std=gnu++14  -c ",
-					"src" : "/home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancement.cpp",
+					"src" : "/home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancementAndFaceId.cpp",
 					"workingDirectory" : "/home/ubuntu18/proj/weekend_app/app/.cxx/cmake/debug/arm64-v8a"
 				}
 			],

@@ -59,12 +59,12 @@ build CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o: CXX_COMP
   IN_ABS = /home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancement_jni.cpp
   OBJECT_DIR = CMakeFiles/LowLightEnhancement.dir
   OBJECT_FILE_DIR = CMakeFiles/LowLightEnhancement.dir
-build CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o: CXX_COMPILER__LowLightEnhancement /home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancement.cpp
+build CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o: CXX_COMPILER__LowLightEnhancement /home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancementAndFaceId.cpp
   DEFINES = -DLowLightEnhancement_EXPORTS
-  DEP_FILE = CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o.d
+  DEP_FILE = CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o.d
   FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -std=gnu++14 -O2 -DNDEBUG  -fPIC   -std=gnu++14
   INCLUDES = -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/headers -I/home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/headers
-  IN_ABS = /home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancement.cpp
+  IN_ABS = /home/ubuntu18/proj/weekend_app/app/src/main/cc/LowLightEnhancementAndFaceId.cpp
   OBJECT_DIR = CMakeFiles/LowLightEnhancement.dir
   OBJECT_FILE_DIR = CMakeFiles/LowLightEnhancement.dir
 
@@ -75,7 +75,7 @@ build CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o: CXX_COMPILER
 #############################################
 # Link the shared library /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/arm64-v8a/libLowLightEnhancement.so
 
-build /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/arm64-v8a/libLowLightEnhancement.so: CXX_SHARED_LIBRARY_LINKER__LowLightEnhancement CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement.cpp.o | /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/jni/arm64-v8a/libtensorflowlite_jni.so /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/jni/arm64-v8a/libtensorflowlite_gpu_jni.so /home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/liblog.so
+build /home/ubuntu18/proj/weekend_app/app/build/intermediates/cmake/release/obj/arm64-v8a/libLowLightEnhancement.so: CXX_SHARED_LIBRARY_LINKER__LowLightEnhancement CMakeFiles/LowLightEnhancement.dir/LowLightEnhancement_jni.cpp.o CMakeFiles/LowLightEnhancement.dir/LowLightEnhancementAndFaceId.cpp.o | /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/jni/arm64-v8a/libtensorflowlite_jni.so /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/jni/arm64-v8a/libtensorflowlite_gpu_jni.so /home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/liblog.so
   LANGUAGE_COMPILE_FLAGS = -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -std=gnu++14 -O2 -DNDEBUG
   LINK_FLAGS = -Wl,--exclude-libs,libgcc.a -Wl,--exclude-libs,libgcc_real.a -Wl,--exclude-libs,libatomic.a -Wl,--build-id -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments
   LINK_LIBRARIES = -landroid /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite/jni/arm64-v8a/libtensorflowlite_jni.so /home/ubuntu18/proj/weekend_app/app/src/main/cc/../../../../libraries/tensorflowlite-gpu/jni/arm64-v8a/libtensorflowlite_gpu_jni.so /home/ubuntu18/Android/Sdk/ndk/21.3.6528147/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/liblog.so -latomic -lm

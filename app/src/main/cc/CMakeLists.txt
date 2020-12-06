@@ -8,7 +8,7 @@ set(TFLITE_GPU_INCLUDE "${CMAKE_CURRENT_SOURCE_DIR}/../../../../libraries/tensor
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++14")
 set(CMAKE_CXX_STANDARD 14)
 
-add_library(LowLightEnhancement SHARED LowLightEnhancement_jni.cpp LowLightEnhancement.cpp)
+add_library(LowLightEnhancement SHARED LowLightEnhancement_jni.cpp LowLightEnhancementAndFaceId.cpp)
 
 add_library(lib_tensorflowlite SHARED IMPORTED)
 set_target_properties(lib_tensorflowlite PROPERTIES IMPORTED_LOCATION

@@ -20,7 +20,7 @@
         android:testOnly="true"
         android:theme="@style/AppTheme.SuperResolution" >
         <activity
-            android:name="org.tensorflow.lite.examples.superresolution.MainActivity"
+            android:name="org.tensorflow.lite.examples.lowlightenhancementandID.MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
             <intent-filter>
