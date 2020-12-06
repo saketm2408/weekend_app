@@ -59,6 +59,31 @@ extern "C" JNIEXPORT jintArray JNICALL Java_org_tensorflow_lite_examples_lowligh
   return enhanced_img_rgb;
 }
 
+extern "C" JNIEXPORT jfloatArray JNICALL Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_computeFaceEmbFromJNI(
+            JNIEnv *env, jobject thiz, jlong native_handle, jintArray enhanced_rgb) {
+
+  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside computeFaceEmbFromJNI 1");
+  jint *enhanced_img_rgb = env->GetIntArrayElements(enhanced_rgb, NULL);
+
+  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside computeFaceEmbFromJNI 2");
+  if (!reinterpret_cast<LowLightEnhancementAndFaceId *>(native_handle)
+          ->IsInterpreterCreated()) {
+    return nullptr;
+  }
+
+  // Generate low light enhanced image
+  float* emb = reinterpret_cast<LowLightEnhancementAndFaceId *>(native_handle)
+          ->ComputeFaceEMb(static_cast<int *>(enhanced_img_rgb));
+  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside computeFaceEmbFromJNI 3");
+  if (!emb) {
+    return nullptr;  // super resolution failed
+  }
+
+  jfloatArray result;
+  // result = env->SetFloatArrayRegion(result, 0, 3, emb);
+  return result;
+}
+
 extern "C" JNIEXPORT jlong JNICALL Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_initWithByteBufferFromJNI(
     JNIEnv *env, jobject thiz, jobject model_buffer, jboolean use_gpu) {
   

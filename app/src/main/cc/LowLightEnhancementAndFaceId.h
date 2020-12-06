@@ -52,14 +52,15 @@ class LowLightEnhancementAndFaceId {
   // image
   std::unique_ptr<int[]> DoLowLightEnhancement(int* lr_img_rgb);
 
- private:
+    float* ComputeFaceEMb(int *img_rgb);
+
+private:
   // TODO: use unique_ptr
   TfLiteInterpreter* interpreter_;
   TfLiteModel* model_ = nullptr;
   TfLiteInterpreterOptions* options_ = nullptr;
   TfLiteDelegate* delegate_ = nullptr;
 
-  float* ComputeFaceEMb(int *img_rgb);
 };
 
 }  // namespace superresolution
