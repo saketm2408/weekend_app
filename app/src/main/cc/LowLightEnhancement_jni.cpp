@@ -20,6 +20,7 @@
 #include <cinttypes>
 #include <cstring>
 #include <string>
+#include "time.h"
 
 #include "LowLightEnhancementAndFaceId.h"
 
@@ -30,28 +31,27 @@ namespace superresolution {
 extern "C" JNIEXPORT jintArray JNICALL Java_org_tensorflow_lite_examples_lowlightenhancementandID_MainActivity_LowLightEnhancementFromJNI(
     JNIEnv *env, jobject thiz, jlong native_handle, jintArray low_light_rgb) {
 
-  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 1");
+  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside LowLightEnhancementFromJNI 1");
   jint *low_light_img_rgb = env->GetIntArrayElements(low_light_rgb, NULL);
 
-  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 2");
+  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside LowLightEnhancementFromJNI 2");
   if (!reinterpret_cast<LowLightEnhancementAndFaceId *>(native_handle)
            ->IsInterpreterCreated()) {
     return nullptr;
   }
 
   // Generate low light enhanced image
-  auto sr_rgb_colors = reinterpret_cast<LowLightEnhancementAndFaceId *>(native_handle)
-          ->DoLowLightEnhancement(static_cast<int *>(low_light_img_rgb));
-  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 3");
+  clock_t tStart0 = clock();
+  auto sr_rgb_colors = reinterpret_cast<LowLightEnhancementAndFaceId *>(native_handle)->DoLowLightEnhancement(static_cast<int *>(low_light_img_rgb));
+  __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside LowLightEnhancementFromJNI 3 ");
   if (!sr_rgb_colors) {
     return nullptr;  // super resolution failed
   }
   // Create jintArray to pass through jni
   jintArray enhanced_img_rgb = env->NewIntArray(kNumberOfOutputPixels);
-  env->SetIntArrayRegion(enhanced_img_rgb, 0, kNumberOfOutputPixels,
-                         sr_rgb_colors.get());
+  env->SetIntArrayRegion(enhanced_img_rgb, 0, kNumberOfOutputPixels, sr_rgb_colors.get());
 
-    __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside superResolutionFromJNI 4");
+    __android_log_print(ANDROID_LOG_INFO, "tflite ", " inside LowLightEnhancementFromJNI 4");
 
   // Clean up before we return
   env->ReleaseIntArrayElements(low_light_rgb, low_light_img_rgb, JNI_COMMIT);
