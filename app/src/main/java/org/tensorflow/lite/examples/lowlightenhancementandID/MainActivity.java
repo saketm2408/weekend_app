@@ -166,15 +166,15 @@ public class MainActivity extends AppCompatActivity {
             Bitmap enImgBitmap =
                 Bitmap.createBitmap(
                     enhancedRGB, OL_IMAGE_WIDTH, OL_IMAGE_HEIGHT, Bitmap.Config.ARGB_8888);
-            Bitmap resizedB =Bitmap.createScaledBitmap(enImgBitmap, 112, 112, false);
+            /* Bitmap resizedB =Bitmap.createScaledBitmap(enImgBitmap, 112, 112, false);
             int[] resizedEnRGB = new int[112*112];
-            resizedB.getPixels(resizedEnRGB, 0, 112, 0, 0, 112, 112);
+            resizedB.getPixels(resizedEnRGB, 0, 112, 0, 0, 112, 112); */
             // computeFaceEmbFromJNI(faceIDNativeHandle, resizedEnRGB);
 
             enhancedImageView.setImageBitmap(enImgBitmap);
             lowLightImageView.setImageBitmap(selectedLRBitmap);
             resultLayout.setVisibility(View.VISIBLE);
-            System.out.println("Inference time::::::::::::::::: " + processingTimeMs + "ms");
+            // System.out.println("Inference time::::::::::::::::: " + processingTimeMs + "ms");
           }
         });
   }
